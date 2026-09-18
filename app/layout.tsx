@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://big-daddy-junk-removal-demo.vercel.app"),
+  metadataBase: new URL("https://big-daddy-junk-removal-wi.vercel.app"),
   title: "Big Daddy Junk Removal | Milwaukee Area",
   description: "Big-item junk removal and hauling in the Milwaukee area. Call or text 414-600-9705 for an estimate.",
   robots: { index: false, follow: false },
