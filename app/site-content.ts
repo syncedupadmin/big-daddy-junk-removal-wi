@@ -1,4 +1,5 @@
 export const phone = "tel:+14146009705";
+export const sms = "sms:+14146009705";
 export const phoneLabel = "414-600-9705";
 export const address = "4543 N 100th St, Wauwatosa, WI 53225";
 

@@ -2,46 +2,17 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteHeader from "./site-header";
 import SiteFooter from "./site-footer";
-import { phone, services } from "./site-content";
+import ContactActions from "./contact-actions";
+import { services } from "./site-content";
 
 export default function Home() {
-  return <>
-    <SiteHeader />
-
-    <main id="top">
-      <section className="hero" aria-labelledby="hero-title">
-        <div className="hero-image"><Image src="/source-assets/gallery-5.jpg" alt="A Big Daddy Junk Removal trailer loaded for hauling in a Wauwatosa neighborhood" fill priority sizes="(max-width: 800px) 100vw, 52vw" /></div>
-        <div className="hero-grid" aria-hidden="true"><span /><span /><span /><span /></div>
-        <div className="hero-copy">
-          <p className="eyebrow"><span className="orange-bar" /> Milwaukee area hauling</p>
-          <h1 id="hero-title">CLEAR<br /><em>THE BIG</em><br />STUFF.</h1>
-          <p className="hero-dek">Big-item junk removal for the things that are too heavy, too awkward, or simply too much.</p>
-          <a className="button button-orange" href={phone}>Call or text for an estimate <span>↗</span></a>
-        </div>
-        <div className="hero-stamp" aria-label="18 yard dump trailer"><b>18</b><span>YARD<br />DUMP<br />TRAILER</span></div>
-        <a className="scroll-cue" href="#services">Scroll to see what we haul <span>↓</span></a>
-      </section>
-
-      <section className="intro section-shell" aria-labelledby="intro-title">
-        <div className="section-index">BD / 01</div>
-        <div><p className="eyebrow">No nonsense. Just gone.</p><h2 id="intro-title">Room to breathe<br /><span>starts here.</span></h2></div>
-        <p className="intro-copy">Big Daddy Junk Removal helps homeowners get rid of the bulky stuff that gets in the way. We bring an 18-yard dump trailer and charge based on how much of the trailer your job fills.</p>
-      </section>
-
-      <section id="services" className="services section-shell" aria-labelledby="services-title">
-        <div className="section-index">BD / 02</div>
-        <div className="services-main"><div className="section-heading"><p className="eyebrow">What we haul</p><h2 id="services-title">Big things.<br /><span>Handled.</span></h2><Link className="text-link dark-link" href="/services">See all services <span>↗</span></Link></div>
-          <div className="service-list">{services.map(([number, title, description]) => <article className="service-row" key={number}><span className="service-number">{number}</span><h3>{title}</h3><p>{description}</p><span className="service-arrow" aria-hidden="true">↗</span></article>)}</div>
-        </div>
-      </section>
-
-      <section id="process" className="process section-shell" aria-labelledby="process-title">
-        <div className="section-index">BD / 03</div><div className="process-content"><p className="eyebrow">The simple version</p><h2 id="process-title">You point.<br /><span>We lift.</span></h2><div className="process-steps"><div><b>01</b><h3>Call or text</h3><p>Tell us what needs to go and where it is.</p></div><div><b>02</b><h3>Get an estimate</h3><p>We’ll talk through the job and the trailer space it will take.</p></div><div><b>03</b><h3>Make space</h3><p>We load it up and haul it away.</p></div></div><Link className="text-link" href="/how-it-works">See how it works <span>↗</span></Link></div>
-      </section>
-
-      <section id="contact" className="contact section-shell" aria-labelledby="contact-title"><div className="contact-mark" aria-hidden="true">BD</div><div><p className="eyebrow">Ready when you are</p><h2 id="contact-title">Let’s make<br /><span>some space.</span></h2><p>Call or text for an estimate. Big Daddy Junk Removal is based at 4543 N 100th St, Wauwatosa, WI 53225.</p><a className="button button-orange" href={phone}>414-600-9705 <span>↗</span></a></div></section>
-    </main>
-
-    <SiteFooter />
-  </>;
+  return <><SiteHeader /><main id="top">
+    <section className="hero" aria-labelledby="hero-title"><div className="hero-image"><Image src="/source-assets/gallery-4.jpg" alt="Big Daddy Junk Removal dump trailer ready for unloading" fill priority sizes="(max-width: 800px) 100vw, 54vw" /></div><div className="hero-copy"><p className="eyebrow"><span className="orange-bar" /> Wauwatosa · Milwaukee area</p><h1 id="hero-title">Big stuff.<br /><em>Gone.</em></h1><p className="hero-dek">Local junk removal for cleanouts, bulky items, appliances, demo debris, and the jobs that need an 18-yard trailer.</p><ContactActions /></div><div className="hero-capacity"><b>18</b><span>yard dump trailer<br />Volume-based estimates</span></div></section>
+    <section className="proof-strip" aria-label="Service highlights"><div><b>Based in</b><span>Wauwatosa, Wisconsin</span></div><div><b>Estimate</b><span>Call or text with job details</span></div><div><b>Capacity</b><span>18-yard dump trailer</span></div></section>
+    <section className="intro section-shell" aria-labelledby="intro-title"><div><p className="eyebrow">Local hauling</p><h2 id="intro-title">Junk removal from Wauwatosa</h2></div><div className="intro-copy"><p>Big Daddy Junk Removal helps homeowners clear bulky, awkward, and heavy items. Send the pickup address and a quick description, then talk through how much trailer space the job may take.</p><Link className="text-link" href="/how-it-works">How estimates work <span>↗</span></Link></div></section>
+    <section id="services" className="services section-shell" aria-labelledby="services-title"><div className="services-main"><div className="section-heading"><div><p className="eyebrow">What we haul</p><h2 id="services-title">Services for bulky pickups</h2></div><Link className="text-link dark-link" href="/services">View service details <span>↗</span></Link></div><div className="service-list">{services.map(([number,title,description])=><article className="service-row" key={number}><span className="service-number">{number}</span><h3>{title}</h3><p>{description}</p><Link className="service-arrow" href="/services" aria-label={`Learn about ${title}`}>↗</Link></article>)}</div></div></section>
+    <section className="work-proof" aria-labelledby="work-title"><div className="work-copy"><p className="eyebrow">Business-supplied photos</p><h2 id="work-title">Recent hauls</h2><p>Actual trailer loads from Big Daddy jobs, including bulky household items and a residential pickup.</p><Link className="text-link" href="/services">See services and job types <span>↗</span></Link></div><figure className="work-primary"><Image src="/source-assets/gallery-1.jpg" alt="Furniture and bulky household items loaded in the Big Daddy trailer" width={768} height={1024} /><figcaption>Bulky household pickup</figcaption></figure><figure className="work-secondary"><Image src="/source-assets/gallery-5.jpg" alt="Loaded Big Daddy trailer at a residential pickup" width={768} height={1024} /><figcaption>Residential haul</figcaption></figure></section>
+    <section className="process section-shell" aria-labelledby="process-title"><div className="process-content"><p className="eyebrow">Three steps</p><h2 id="process-title">How the pickup works</h2><div className="process-steps"><div><b>01</b><h3>Call or text</h3><p>Share the address, items, and amount.</p></div><div><b>02</b><h3>Talk through volume</h3><p>The estimate is based on how much of the trailer your job fills.</p></div><div><b>03</b><h3>Get it hauled</h3><p>Big Daddy loads the items and takes them away.</p></div></div><ContactActions compact /></div></section>
+    <section className="contact section-shell" aria-labelledby="contact-title"><div><p className="eyebrow">Estimate details</p><h2 id="contact-title">Start with the job details</h2><p>Call or text for an estimate. A quick description of the items and how much there is gives the conversation a useful starting point.</p><ContactActions /></div></section>
+  </main><SiteFooter /></>;
 }
