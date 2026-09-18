@@ -1,0 +1,13 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import SiteHeader from "../site-header";
+import SiteFooter from "../site-footer";
+import { phone } from "../site-content";
+
+export const metadata: Metadata = { title: "How It Works | Big Daddy Junk Removal", description: "Call or text Big Daddy Junk Removal to talk through your pickup and estimate.", alternates: { canonical: "/how-it-works" }, robots: { index: false, follow: false }, openGraph: { title: "How It Works | Big Daddy Junk Removal", url: "/how-it-works", images: [{ url: "/opengraph-image", width: 1200, height: 630 }] } };
+
+export default function HowItWorksPage() {
+  return <><SiteHeader /><main><section className="route-hero route-hero-dark" aria-labelledby="process-page-title"><div className="section-index">BD / 03</div><div><p className="eyebrow">The simple version</p><h1 id="process-page-title">You point.<br /><span>We lift.</span></h1><p className="route-lede">A clear conversation first. Then a trailer sized around what the job actually needs.</p></div><div className="trailer-figure" aria-label="18 yard dump trailer"><b>18</b><span>YARD<br />DUMP<br />TRAILER</span></div></section>
+    <section className="steps-section" aria-labelledby="steps-title"><div className="section-index">THE FLOW</div><div className="detail-main"><p className="eyebrow">Three moves</p><h2 id="steps-title">From full<br /><span>to clear.</span></h2><div className="big-steps"><article><b>01</b><h3>Call or text</h3><p>Tell Big Daddy what needs to go and where it is. The public listing asks customers to call or text for an estimate.</p></article><article><b>02</b><h3>Talk through the job</h3><p>Describe the items and the amount. No public flat-rate pricing is published, so the estimate starts with the specifics of your pickup.</p></article><article><b>03</b><h3>Fill the trailer</h3><p>The public listing describes an 18-yard dump trailer and charges based on how much of the trailer the job fills.</p></article></div></div></section>
+    <section className="clarity-band clarity-band-paper" aria-labelledby="ready-title"><p className="eyebrow">Ready when you are</p><h2 id="ready-title">Start with<br /><span>the stuff.</span></h2><div className="clarity-copy"><p>Have the address and a quick description ready. Call or text and talk through the next step.</p><a className="button button-orange" href={phone}>414-600-9705 <span>↗</span></a></div></section><section className="next-route next-route-dark"><p className="eyebrow">Need the basics?</p><Link href="/service-area">See where Big Daddy is based <span>↗</span></Link></section></main><SiteFooter /></>;
+}

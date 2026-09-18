@@ -1,0 +1,16 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import SiteHeader from "../site-header";
+import SiteFooter from "../site-footer";
+import { phone, services } from "../site-content";
+
+export const metadata: Metadata = { title: "What We Haul | Big Daddy Junk Removal", description: "Explore the junk removal and hauling services publicly listed for Big Daddy Junk Removal.", alternates: { canonical: "/services" }, robots: { index: false, follow: false }, openGraph: { title: "What We Haul | Big Daddy Junk Removal", url: "/services", images: [{ url: "/opengraph-image", width: 1200, height: 630 }] } };
+
+export default function ServicesPage() {
+  return <><SiteHeader /><main><section className="route-hero route-hero-orange" aria-labelledby="services-page-title"><div className="section-index">BD / 02</div><div><p className="eyebrow">What we haul</p><h1 id="services-page-title">Big things.<br /><span>Handled.</span></h1><p className="route-lede">The public service list is straightforward: bulky items, cleanouts, and the mess that comes with making space.</p></div><div className="route-number">06<br /><small>listed<br />services</small></div></section>
+    <section className="detail-section" aria-labelledby="service-list-title"><div className="section-index">THE LIST</div><div className="detail-main"><p className="eyebrow">A practical haul</p><h2 id="service-list-title">What can<br /><span>go?</span></h2><div className="detail-list">{services.map(([number, title, description]) => <article key={number}><span>{number}</span><div><h3>{title}</h3><p>{description}</p></div><b aria-hidden="true">↗</b></article>)}</div></div></section>
+    <section className="service-proof" aria-labelledby="real-work-title"><div className="proof-heading"><p className="eyebrow">From the current business gallery</p><h2 id="real-work-title">Real loads.<br /><span>Real space back.</span></h2></div><div className="proof-grid"><figure><Image src="/source-assets/gallery-1.jpg" alt="Furniture and bulky household items loaded into the Big Daddy trailer" width={748} height={998} /><figcaption>Bulky household pickup</figcaption></figure><figure><Image src="/source-assets/gallery-4.jpg" alt="Big Daddy dump trailer being unloaded" width={748} height={998} /><figcaption>Dump trailer in action</figcaption></figure><figure><Image src="/source-assets/gallery-5.jpg" alt="Loaded Big Daddy trailer in a Wauwatosa neighborhood" width={748} height={998} /><figcaption>A full residential haul</figcaption></figure></div></section>
+    <section className="clarity-band" aria-labelledby="clarity-title"><p className="eyebrow">Before the pickup</p><h2 id="clarity-title">No guesswork.<br /><span>Just a call.</span></h2><div className="clarity-copy"><p>There is no public online price list or accepted-materials chart. Call or text with what needs to go, where it is, and how much there is. The owner’s public listing says estimates are handled by call or text.</p><a className="button button-orange" href={phone}>Call or text for an estimate <span>↗</span></a></div></section>
+    <section className="next-route"><p className="eyebrow">Next up</p><Link href="/how-it-works">See how the estimate works <span>↗</span></Link></section></main><SiteFooter /></>;
+}
